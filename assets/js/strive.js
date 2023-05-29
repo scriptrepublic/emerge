@@ -1,0 +1,265 @@
+var baseurl = $("body").data("baseurl"),
+    message_saved = "Record has been saved successfully.",
+    message_deleted = "Record has been deleted successfully.",
+    message_error = "An error occurred. Please try again later.",
+    message_loading = baseurl + "assets/img/preloader.gif";
+
+
+function sweetalert(e, t, a) {
+    swal({
+        title: t,
+        text: a,
+        type: e,
+        showCancelButton: 0,
+        allowOutsideClick: !1,
+        confirmButtonClass: "btn btn-success"
+    })
+}
+
+function sweetalert_redirect(e, t, a, o) {
+    swal({
+        title: t,
+        text: a,
+        type: e,
+        showCancelButton: 0,
+        allowOutsideClick: !1
+    }).then(function() {
+        window.location = o
+    })
+}
+
+function sweetalertconfirm(e, t, a, o, n = null) {
+    swal({
+        title: t,
+        text: a,
+        type: e,
+        showCancelButton: !0,
+        allowOutsideClick: !1,
+        confirmButtonClass: "btn btn-success",
+        cancelButtonClass: "btn btn-warning",
+        confirmButtonText: "Yes"
+    }).then(e => {
+        e && o(n)
+    }).catch(swal.noop)
+}
+
+function removescreen() {
+    $("#overlay").remove(), $("#pop-content").remove()
+}
+
+function blockscreen() {
+    var e = $(document).height(),
+        t = Math.max(0, ($(window).height() - $(this).outerHeight()) / 2 + $(window).scrollTop()),
+        a = Math.max(0, ($(window).width() - $(this).outerWidth()) / 2 + $(window).scrollLeft());
+    $("html").append("<div id='overlay'></div>"), $("html").append("<div id='pop-content' class='loading'></div>"), $("html, body").animate({}, 300), $("#overlay").css({
+        position: "absolute",
+        height: e,
+        width: "100%",
+        top: t + "px",
+        left: a + "px",
+        right: "0",
+        background: "#000",
+        "z-index": "3000",
+        opacity: "0.8"
+    }), $("#pop-content").css({
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: t + "px",
+        left: a + "px",
+        "z-index": "3001",
+        padding: "20px",
+        margin: "0 auto",
+        "background-image": "url(" + message_loading + ")",
+        "background-repeat": "no-repeat",
+        "background-position": "center"
+    })
+}
+
+function validateEmail(email) {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if( !emailReg.test( email ) ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+if($("#form_login").length)  {
+    
+    $("#sendotp").click(function(){
+
+        if(validateEmail($("#email").val())){
+            sendotp();
+        }else{
+            sweetalert('error', 'Invalid Email Address', 'Please check your Email Address.');
+        }
+    });
+
+    $("#login").click(function(){
+
+
+        if($("#form_login").valid()){
+            loginnow();
+        }
+
+    });
+}
+
+
+function sendotp(){
+    var frm = $('#form_login');
+    $.ajax({
+        type: frm.attr('method'),
+        url: 'login/sendotp',
+        data: frm.serialize(),
+        dataType: "text",  
+        cache:false,
+        success: function(data){
+            sweetalert('success', 'OTP has been generated', 'For this demonstration you may use the following OTP: '+data); 
+        },
+        beforeSend: function() { blockscreen(); },
+        complete: function() { removescreen(); },
+        error: function(data){ console.log(data); sweetalert('error', 'ERROR OCCURED', data['status']+': '+data['statusText']);  console.log(data); }
+    });
+
+}
+
+
+function loginnow(){
+    var frm = $('#form_login');
+    $.ajax({
+        type: frm.attr('method'),
+        url: 'login/loginnow',
+        data: frm.serialize(),
+        dataType: "text",  
+        cache:false,
+        success: function(data){
+            if(data == false){
+
+              sweetalert('error', 'Error Login', 'Error Login'+data); 
+            }else{ 
+              window.location.replace(baseurl+'profile');
+            }
+        },
+        beforeSend: function() { blockscreen(); },
+        complete: function() { removescreen(); },
+        error: function(data){ console.log(data); sweetalert('error', 'ERROR OCCURED', data['status']+': '+data['statusText']);  console.log(data); }
+    });
+
+}
+
+
+
+
+
+if($("#form_profile").length)  {
+    $("#save_profile").click(function(){
+        if($("#form_profile").valid()){
+            saveprofile();
+        }
+    });
+
+    $('select[name="b_country"]').change(function () {
+        var b_country = this.value;
+        $("select[name='b_target'] option[value='"+b_country+"']").remove();
+    });
+}
+
+
+
+function gotoassessment(){
+    window.location.replace(baseurl+'assessment');
+}
+
+function saveprofile(){
+
+     $.ajax({
+            type: "POST",
+            url: baseurl + "profile/updateprofile", 
+            data: {
+                    action: "save_profile",
+                    firstname: $('input[name="firstname"]').val(),
+                    lastname: $('input[name="lastname"]').val(),
+                    b_name: $('input[name="b_name"]').val(),
+                    b_country: $('select[name="b_country"]').val(),
+                    b_target: $('select[name="b_target"]').val(),
+                    b_email: $('input[name="b_email"]').val(),
+                    b_contact: $('input[name="b_contact"]').val(),
+                    b_info: $('textarea[name="b_info"]').val(),
+                    b_photo: $('#wizardPicturePreview').attr('src'),
+                },
+            dataType: "text",  
+            cache:false,
+            success: function(data){
+                sweetalertconfirm('success', 'Your STRIVE Business Profile has been set up successfully.', 'Do you want to start with your Export Readiness Assessment now?', gotoassessment, null); 
+
+            },
+            beforeSend: function() { blockscreen(); },
+            complete: function() { removescreen();  },
+            error: function(data){ sweetalert('error', 'ERROR OCCURED', data['status']+': '+data['statusText']);  console.log(data); }
+        });
+
+}
+
+if($("#image-gallery").length)  {
+    $('#image-gallery').lightSlider({
+        gallery: true,
+        item: 1,
+        thumbItem: 9,
+        slideMargin: 0,
+        speed: 500,
+        auto: true,
+        loop: true,
+        onSliderLoad: function () {
+            $('#image-gallery').removeClass('cS-hidden');
+        }
+    });
+
+}
+
+
+if($("#form_assessment").length)  {
+    $("#submit_assessment").click(function(){
+        if($("#form_assessment").valid()){
+            save_assessment();
+        }else{
+            sweetalert('error', 'Form Completion Alert', 'Please double-check and ensure all fields are filled out.');
+        }
+    });
+
+}
+
+function save_assessment() {
+    var allow_public = 0;
+    if($('input[name=allow_public]').is(":checked")){
+        allow_public = 1;
+    }
+    $.ajax({
+        type: "POST",
+        url: baseurl + "assessment/save_assess", 
+        data: {
+                action: "save_assess",
+                b_country: $('select[name="b_country"]').val(),
+                b_target: $('select[name="b_target"]').val(),
+                b_industry: $('select[name="b_industry"]').val(),
+                category_id: $('input[name="category_id[]"]:checked').map(function(i, e) {return e.value}).toArray(),
+                q_id: $('.q_id:checked').map(function(i, e) {return e.value}).toArray(),
+                document_id: $('input[name="document_id[]"]:checked').map(function(i, e) {return e.value}).toArray(),
+                allow_public: allow_public,
+            },
+        dataType: "text",  
+        cache:false,
+        success: function(data){
+//            sweetalert('success', 'SUCCESS', message_saved);
+            sweetalert_redirect('success', 'Your Export Readiness Assessment form has been processed and submitted successfully.', 'We will now redirecting you to your assessment report.', baseurl+'report/goto/'+$('select[name="b_country"]').val()+'/'+$('select[name="b_target"]').val())
+        },
+        beforeSend: function() { blockscreen(); },
+        complete: function() { removescreen();  },
+        error: function(data){ sweetalert('error', 'ERROR OCCURED', data['status']+': '+data['statusText']);  console.log(data); }
+    });
+}
+
+
+
