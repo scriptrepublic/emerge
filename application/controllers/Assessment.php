@@ -26,7 +26,7 @@ class Assessment extends CI_Controller {
 			$target_country = $data['result']['b_target'];
 			$orig_country = $data['result']['b_country'];
 
-			$data['result_docs'] = $this-> database_model->selectquery('SELECT A.*, B.doc_name, B.doc_description FROM r_doc_country AS A LEFT JOIN r_doc AS B on A.doc_id = b.doc_id WHERE A.country_id = '. $target_country);
+			$data['result_docs'] = $this-> database_model->selectquery('SELECT A.*, B.doc_name, B.doc_description FROM r_doc_country AS A LEFT JOIN r_doc AS B on A.doc_id = B.doc_id WHERE A.country_id = '. $target_country);
 
 
 
