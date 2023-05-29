@@ -44,37 +44,14 @@ function sweetalertconfirm(e, t, a, o, n = null) {
 }
 
 function removescreen() {
-    $("#overlay").remove(), $("#pop-content").remove()
+    $('#preloader').delay(350).fadeOut('slow');
 }
 
 function blockscreen() {
-    var e = $(document).height(),
-        t = Math.max(0, ($(window).height() - $(this).outerHeight()) / 2 + $(window).scrollTop()),
-        a = Math.max(0, ($(window).width() - $(this).outerWidth()) / 2 + $(window).scrollLeft());
-    $("html").append("<div id='overlay'></div>"), $("html").append("<div id='pop-content' class='loading'></div>"), $("html, body").animate({}, 300), $("#overlay").css({
-        position: "absolute",
-        height: e,
-        width: "100%",
-        top: t + "px",
-        left: a + "px",
-        right: "0",
-        background: "#000",
-        "z-index": "3000",
-        opacity: "0.8"
-    }), $("#pop-content").css({
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        top: t + "px",
-        left: a + "px",
-        "z-index": "3001",
-        padding: "20px",
-        margin: "0 auto",
-        "background-image": "url(" + message_loading + ")",
-        "background-repeat": "no-repeat",
-        "background-position": "center"
-    })
+    $('#preloader').show();
+    $('#status').show();
 }
+
 
 function validateEmail(email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
