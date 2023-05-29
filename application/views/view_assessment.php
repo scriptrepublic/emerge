@@ -25,6 +25,9 @@
 
                                     <div class="tab-pane" id="step1">
                                         <div class="row p-b-15  ">
+                                            <center>
+                                                <img src="<?php echo base_url();?>assets/img/steps/step1.png" style="width: 300px;"/>
+                                            </center>
                                             <h4 class="info-text"> Let's start with your basic information</h4>
 
                                             <div class="col-sm-12">
@@ -97,6 +100,9 @@
                                     <!--  End step 1 -->
 
                                     <div class="tab-pane" id="step2">
+                                        <center>
+                                            <img src="<?php echo base_url();?>assets/img/steps/step2.png" style="width: 300px;"/>
+                                        </center>
                                         <h4 class="info-text"> What industry does your business belong to? </h4>
                                         <div class="row">
                                             <div class="col-sm-12"> 
@@ -148,7 +154,10 @@
                                     </div>
                                     <!-- End step 2 -->
 
-                                    <div class="tab-pane" id="step3">                                        
+                                    <div class="tab-pane" id="step3"> 
+                                        <center>
+                                            <img src="<?php echo base_url();?>assets/img/steps/step3.png" style="width: 300px;"/>
+                                        </center>                                       
                                         <h4 class="info-text">Areas of Export Readiness </h4>
                                         <div class="row">  
 
@@ -165,7 +174,8 @@
                                                     <div class="form-group">
                                                         <?php foreach ($result_q_cat as $row_qcat){
 														    	?>
-														    	<h4 class="s-property-title"><?php echo $row_qcat['qcat_name'];?></h4>
+
+														    	<h4 class="s-property-title"><?php echo $row_qcat['qcat_name'];?> &nbsp; <img  src="<?php echo base_url();?>assets/img/steps/<?php echo $row_qcat['img'];?>" style="width: 100px;"/></h4>
 
 														    	
 														    	<div class="list-group">
@@ -200,7 +210,10 @@
                                     <!--  End step 3 -->
 
 
-                                    <div class="tab-pane" id="step4">                                        
+                                    <div class="tab-pane" id="step4">   
+                                        <center>
+                                            <img src="<?php echo base_url();?>assets/img/steps/step4.png" style="width: 300px;"/>
+                                        </center>                                     
                                         <h4 class="info-text"> Exporting Documentation Requirements </h4>
                                         <div class="row"> 
 

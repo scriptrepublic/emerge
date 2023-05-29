@@ -115,7 +115,7 @@ function loginnow(){
         success: function(data){
             if(data == false){
 
-              sweetalert('error', 'Error Login', 'Error Login'+data); 
+              sweetalert('error', 'Error Logging in.', 'Invalid One-Time Password Provided'+data); 
             }else{ 
               window.location.replace(baseurl+'profile');
             }

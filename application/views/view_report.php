@@ -11,6 +11,9 @@
                             </div>
                             <div class="clear">
                             <div class="profiel-header">
+                                <center>
+                                    <img src="<?php echo base_url();?>assets/img/steps/report.png" style="width: 200px;"/>
+                                </center>
                                 <h3>
                                     MSME EXPORT READINESS <b>ASSESSMENT</b> REPORT <br>
                                     <small>We are pleased to present your Exporting Assessment Report,<br>which provides a comprehensive evaluation of your readiness for international trade.<br>Here is a summary of the key findings:</small>
@@ -61,6 +64,8 @@
                                     <div class="form-group">
                                         <?php foreach ($result_q_cat as $row_qcat){
                                                 ?>
+                                                <img class="pull-right" src="<?php echo base_url();?>assets/img/steps/<?php echo $row_qcat['img'];?>" style="width: 100px;"/>
+                                                
                                                 <h4 class="s-property-title"><?php echo $row_qcat['qcat_name'];?></h4>
 
 
@@ -86,6 +91,7 @@
 
                                                     </li>
                                                 </ul>
+                                                <hr>
                                                 <?php
                                         } ?>
                                     </div>

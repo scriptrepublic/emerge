@@ -75,7 +75,7 @@ class Report extends CI_Controller {
 			$data['result_q_cat'] = $this-> database_model->selectall('r_question_category');
 
 
-			$data['result_docs'] = $this-> database_model->selectquery('SELECT A.*, B.doc_name, B.doc_action, B.doc_link FROM r_doc_country AS A LEFT JOIN r_doc AS B on A.doc_id = B.doc_id WHERE A.country_id = 1 AND A.doc_id NOT IN (SELECT ud_doc_id FROM r_user_documents WHERE ud_user_id = '.$user_id.' AND ud_orig_country = '.$orig.' and ud_target_country = '.$target.');');
+			$data['result_docs'] = $this-> database_model->selectquery('SELECT A.*, B.doc_name, B.doc_action, B.doc_link FROM r_doc_country AS A LEFT JOIN r_doc AS B on A.doc_id = B.doc_id WHERE A.country_id = '.$target.' AND A.doc_id NOT IN (SELECT ud_doc_id FROM r_user_documents WHERE ud_user_id = '.$user_id.' AND ud_orig_country = '.$orig.' and ud_target_country = '.$target.');');
 
 			//echo count($data['result_docs']);
 

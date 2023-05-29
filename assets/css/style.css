@@ -8,7 +8,7 @@ body {
     /*font-weight: 300;*/
     padding:0;
     margin:0;
-    font-size:14px;
+    font-size:16px;
     line-height: 28px;
     color: #000000; 
     background: #fff; 
@@ -292,7 +292,7 @@ input[type="search"]::-webkit-search-decoration {
     font-weight: 600;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,.btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
-    color: #FF6C6A;
+    color: #FFFFFF;
     background-color: #313538;
     border-color: #282829;
     font-weight: 600;
@@ -543,7 +543,6 @@ label small{
 .bootstrap-select button.dropdown-toggle{
     background: rgba(252, 252, 252, 0.35) none repeat scroll 0% 0%;
     border-radius: 1px;
-    color: #ADADAD;
     height: 40px;
     margin-right: 10px;
     width: 99%;
@@ -556,7 +555,7 @@ label small{
     border: 1px solid #EAE9E9;
     box-shadow: 0px 1px 1px rgba(179, 179, 179, 0.1) inset;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    font-weight: 300;
+    font-weight: 500;
 } 
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 100%;
@@ -1033,7 +1032,7 @@ label small{
     font-weight: 500;
 }
 .slider-content p {
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 60px;
     color: #FFFFFF;
 }
@@ -2106,7 +2105,7 @@ single property page
     padding: 15px 25px 25px;
 }
 .dealer-widget {
-    background-color: #838383;
+    background-color: #212121;
     padding: 15px;
     color:#FFF;
     padding-bottom: 20px;
@@ -2141,7 +2140,7 @@ single property page
     padding: 30px 0px 0px 10px;
 }
 .dealer-contacts li i{
-    color: black;
+    color: #FFF;
     padding-right: 8px;
 }
 .clear{ 
@@ -2165,7 +2164,7 @@ single property page
 }
 .property-features ul li a::after{
     content: "/";
-    color: #FF6C6A;
+    color: #6e6e6e;
     font-weight: bold;
     padding-left: 5px;
     font-size: 14px;
@@ -2506,7 +2505,7 @@ count-area
 .search-form .search-toggle {
     margin-top: 20px;
     overflow: hidden;
-    color: #777;
+    color: #000;
     border-top: 1px solid #EAEAEA;
     padding: 15px;
 }
@@ -2832,7 +2831,7 @@ padding-bottom: 15px;
 .footer-area{
 border-top: 1px solid #D1D1D1;
 background: #555 url("../../assets/img/bg-footer.jpg")scroll 0% 0%;
-color: #535353;
+color: #000000;
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
@@ -2864,7 +2863,7 @@ padding-top: 7px;
     padding-bottom: 20px;
 }
 .footer h4{
-    color: #717171;
+    color: #000000;
     font-weight: 400;
     margin-top: 0px;
     font-size: 20px;
@@ -2908,7 +2907,7 @@ ul.footer-adress li {
     margin-bottom: -4px;
 }
 .footer ul li a{
-color: #535353;
+color: #000000;
 font-weight: 500;
 text-transform: uppercase;
 font-size: 13px;
