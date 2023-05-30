@@ -33,7 +33,9 @@
                             <div class="single-footer news-letter">
                                 <h4>APEC APP CHALLENGE 2023</h4>
                                 <div class="footer-title-line"></div>
-                                <img src="<?php echo base_url();?>assets/img/apec-appchallenge.png" alt="" class="wow pulse" data-wow-delay="1s" style="height: 100%; padding-left: 20%;  padding-right: 20%">
+                                <center>
+                                    <img src="<?php echo base_url();?>assets/img/apec-appchallenge.png" alt="" class="wow pulse" data-wow-delay="1s" style="height: 260px;">
+                                </center>
                             </div>
                         </div>
 
