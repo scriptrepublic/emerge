@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title">LIST OF <span class="red strong">STRIVE</span> MSME Partner</h1>               
+                        <h1 class="page-title">LIST OF <span class="red strong"><?php echo SYSTEM_NAME;?></span> MSME Partner</h1>               
                     </div>
                 </div>
             </div>

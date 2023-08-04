@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title">Good Day! <span class="red strong">STRIVE</span> MSME Partner</h1>               
+                        <h1 class="page-title">Good Day! <span class="red strong"><?php echo SYSTEM_NAME;?></span> MSME Partner</h1>               
                     </div>
                 </div>
             </div>
@@ -20,7 +20,8 @@
                             <div class="profiel-header">
                                 <h3>
                                     <b>LOGIN</b> YOUR ACCOUNT <br>
-                                    <small>Please enter your email address, click "Send OTP," and then enter the one-time password sent to your email.</small>
+                                    <small>Please enter your email address, click "Send OTP," and then enter the one-time password sent to your email.</small><br>
+                                    <small><i>For the demo, please use <strong>demo@scriptrepublic.com</strong> or any email and click on 'SEND OTP.'<br>An OTP will pop up. Thank you.</i></small>
                                 </h3>
                                 <hr>
                             </div>

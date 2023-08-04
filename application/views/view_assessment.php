@@ -220,7 +220,7 @@
                                         	<div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-                                                        <label>The following are the exporting documentation requirements smartly picked by the STRIVE system based on your business and target country. Please check those with which you are familiar and have already complied:</label>
+                                                        <label>The following are the exporting documentation requirements smartly picked by the <?php echo SYSTEM_NAME;?> system based on your business and target country. Please check those with which you are familiar and have already complied:</label>
                                                     </div> 
 
 													<div class="list-group">
@@ -245,7 +245,7 @@
                                                 <div class="col-sm-12"> 
                                                     <p>
                                                         <label><strong>Terms and Conditions</strong></label>
-                                                        By submitting the form, you agree to the processing of your business information, including industry, category of inclusion, export readiness information, and familiarity with export documentation requirements, by the STRIVE system. This consent allows us to generate an export readiness report based on the provided data.
+                                                        By submitting the form, you agree to the processing of your business information, including industry, category of inclusion, export readiness information, and familiarity with export documentation requirements, by the <?php echo SYSTEM_NAME;?> system. This consent allows us to generate an export readiness report based on the provided data.
                                                     </p>
 
                                                     <div class="checkbox">
@@ -255,7 +255,7 @@
                                                     </div> 
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox" class="form-control" name="allow_public" <?php if ($result['b_public'] == 1) { echo "checked"; } ?>/> <strong>Allow my MSME business to be included in the STRIVE Public Directory</strong>
+                                                            <input type="checkbox" class="form-control" name="allow_public" <?php if ($result['b_public'] == 1) { echo "checked"; } ?>/> <strong>Allow my MSME business to be included in the <?php echo SYSTEM_NAME;?> Public Directory</strong>
                                                         </label>
                                                     </div> 
 

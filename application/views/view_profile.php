@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="page-head-content">
-                <h1 class="page-title">Good Day! <span class="red strong">STRIVE MSME Partner</span></h1>               
+                <h1 class="page-title">Good Day! <span class="red strong"><?php echo SYSTEM_NAME;?> MSME Partner</span></h1>               
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
                     <form method="post" action="" id="form_profile" class="form">
                         <div class="profiel-header">
                             <h3>
-                                BUILD YOUR <b>STRIVE</b> PROFILE <br>
+                                BUILD YOUR <b><?php echo SYSTEM_NAME;?></b> PROFILE <br>
                                 <small>This information will let us know more about you.</small>
                             </h3>
                             <hr>

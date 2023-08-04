@@ -12,7 +12,7 @@
                                 <div class="footer-title-line"></div>
 
                                 <img src="<?php echo base_url();?>assets/img/logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <p><strong class="apptext">STRIVE</strong> is a comprehensive online export readiness assessment tool and virtual mentor, empowering MSMEs to evaluate their readiness for global markets and showcasing their business and products to a global audience, fueling growth opportunities.</p>
+                                <p><strong class="apptext"><?php echo SYSTEM_NAME;?></strong> is a comprehensive online export readiness assessment tool and virtual mentor, empowering MSMEs to evaluate their readiness for global markets and showcasing their business and products to a global audience, fueling growth opportunities.</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 wow fadeInRight animated">
@@ -47,7 +47,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="pull-left">
-                            <span> &copy; Team ScriptRepublic, Philippines (APEC App Challenge 2023)  </span> 
+                            <span> &copy; Team Philippines (APEC App Challenge 2023)  </span> 
                         </div> 
                         <div class="bottom-menu pull-right"> 
                             <ul> 

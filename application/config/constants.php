@@ -84,11 +84,11 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
-define('SYSTEM_NAME','STRIVE');
+define('SYSTEM_NAME','EMERGE');
 define('SYSTEM_TAGLINE','Your Path to Export Success');
-define('SYSTEM_DESCRIPTION','STRIVE is a powerful app designed to empower Micro, Small, and Medium-sized Enterprises (MSMEs) in their journey towards export success. Built on the foundation of striving for excellence, STRIVE is your comprehensive online export readiness assessment tool, guiding you every step of the way.');
-define('SYSTEM_DESCRIPTION2','With <strong class="apptext">STRIVE</strong>, MSMEs can evaluate their readiness for entering the global market with ease. The app serves as a virtual mentor, providing a dynamic checklist and assessment tool that simplifies the complex process of exporting. Whether you are a budding entrepreneur or an established business, <strong class="apptext">STRIVE</strong> ensures you have a solid foundation before taking the leap.');
-define('SYSTEM_DESCRIPTION3','By collecting essential data, <strong class="apptext">STRIVE</strong> fuels an online directory that acts as a platform for showcasing your business and products to a global audience. As you complete the assessment, your profile becomes a beacon for potential investors and collaborators. It is your opportunity to shine and demonstrate the unique value propositions, offerings, and growth potential that set your business apart.');
+define('SYSTEM_DESCRIPTION','EMERGE is a powerful app designed to empower Micro, Small, and Medium-sized Enterprises (MSMEs) in their journey towards export success. Built on the foundation of striving for excellence, EMERGE is your comprehensive online export readiness assessment tool, guiding you every step of the way.');
+define('SYSTEM_DESCRIPTION2','With <strong class="apptext">EMERGE</strong>, MSMEs can evaluate their readiness for entering the global market with ease. The app serves as a virtual mentor, providing a dynamic checklist and assessment tool that simplifies the complex process of exporting. Whether you are a budding entrepreneur or an established business, <strong class="apptext">EMERGE</strong> ensures you have a solid foundation before taking the leap.');
+define('SYSTEM_DESCRIPTION3','By collecting essential data, <strong class="apptext">EMERGE</strong> fuels an online directory that acts as a platform for showcasing your business and products to a global audience. As you complete the assessment, your profile becomes a beacon for potential investors and collaborators. It is your opportunity to shine and demonstrate the unique value propositions, offerings, and growth potential that set your business apart.');
 define('SYSTEM_KEYWORD','MSME, Export, APEC 2023');
 
 

@@ -63,7 +63,7 @@
                         <?php
                         if ( $this->session->userdata('ses_logged_in')!=TRUE)
                         {
-                            echo '<a href="'.base_url().'login"><button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.45s">Login</button></a>';
+                            echo '<a href="'.base_url().'login"><button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.45s">Login to Readiness Assessment</button></a>';
                         }else{
                             echo '<a href="'.base_url().'assessment"><button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.45s"><i class="fa fa-edit"></i> Readiness Assessment</button></a>';
                         }

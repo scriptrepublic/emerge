@@ -172,7 +172,7 @@
                             </div>
                             <div class="asks-first-info">
                                 <h2>EVALUATING THE READINESS OF YOUR MSME FOR EXPORTING? </h2>
-                                <p>Take advantage of the STRIVE exporting readiness tool to assess your business.</p>
+                                <p>Take advantage of the <?php echo SYSTEM_NAME;?> exporting readiness tool to assess your business.</p>
                             </div>
                             <div class="asks-first-arrow">
                                 <a href="<?php echo base_url();?>assessment"><span class="fa fa-angle-right"></span></a>

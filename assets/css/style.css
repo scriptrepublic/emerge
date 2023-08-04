@@ -889,10 +889,10 @@ label small{
     padding: 4px 0;
 }
 .navbar .yamm-content ul li a {
-    color: #777;
+    color: #000;
     font-size: 14px;
     display: block;
-    font-weight: 300;
+    font-weight: 400;
 }
 .navbar .yamm-content ul li a:hover {
     color: #FF6C6A;
@@ -1742,7 +1742,7 @@ proerty-th
     text-transform: uppercase;
     font-weight: 600;
     color: #FF6C6A;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     position: relative;
     font-size: 12px
 }

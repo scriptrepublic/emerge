@@ -66,11 +66,12 @@ function validateEmail(email) {
 if($("#form_login").length)  {
     
     $("#sendotp").click(function(){
-
-        if(validateEmail($("#email").val())){
-            sendotp();
-        }else{
+        if($("#email").val() == ''){
+            sweetalert('error', 'No Email Address provided.', 'Please provide your Email Address.');
+        }else if(!validateEmail($("#email").val())){
             sweetalert('error', 'Invalid Email Address', 'Please check your Email Address.');
+        }else{
+            sendotp();
         }
     });
 
@@ -170,7 +171,7 @@ function saveprofile(){
             dataType: "text",  
             cache:false,
             success: function(data){
-                sweetalertconfirm('success', 'Your STRIVE Business Profile has been set up successfully.', 'Do you want to start with your Export Readiness Assessment now?', gotoassessment, null); 
+                sweetalertconfirm('success', 'Your EMERGE Business Profile has been set up successfully.', 'Do you want to start with your Export Readiness Assessment now?', gotoassessment, null); 
 
             },
             beforeSend: function() { blockscreen(); },
