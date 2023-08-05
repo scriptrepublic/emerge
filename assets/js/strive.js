@@ -209,6 +209,27 @@ if($("#form_assessment").length)  {
 
 }
 
+
+
+if($("#typewriter").length)  {
+    var htmlText = $("#typewriter").html();
+    $("#typewriter").empty();
+
+    var currentChar = 0;
+    var displayText = "";
+
+    function typeWriter() {
+        if (currentChar < htmlText.length) {
+            displayText += htmlText.charAt(currentChar);
+            $("#typewriter").html(displayText);
+            currentChar++;
+            setTimeout(typeWriter, 5); // Faster typing speed (adjust the delay as needed)
+        }
+    }
+
+    typeWriter();
+}
+
 function save_assessment() {
     var allow_public = 0;
     if($('input[name=allow_public]').is(":checked")){
@@ -219,6 +240,10 @@ function save_assessment() {
         url: baseurl + "assessment/save_assess", 
         data: {
                 action: "save_assess",
+                b_name: $('input[name="b_name"]').val(),
+                b_country_text: $("select[name='b_country'] option:selected").text(),
+                b_target_text: $("select[name='b_target'] option:selected").text(),
+                b_industry_text: $("select[name='b_industry'] option:selected").text(),
                 b_country: $('select[name="b_country"]').val(),
                 b_target: $('select[name="b_target"]').val(),
                 b_industry: $('select[name="b_industry"]').val(),
@@ -240,4 +265,24 @@ function save_assessment() {
 }
 
 
+
+
+
+function ai_recommend(assid) {
+    $.ajax({
+        type: "POST",
+        url: baseurl + "assessment/ai/"+assid, 
+        data: {
+                action: "ai_recommend",
+            },
+        dataType: "text",  
+        cache:false,
+        success: function(data){
+            window.location = baseurl+'report/view_ai/'+assid
+        },
+        beforeSend: function() { blockscreen(); },
+        complete: function() { removescreen();  },
+        error: function(data){ sweetalert('error', 'ERROR OCCURED', data['status']+': '+data['statusText']);  console.log(data); }
+    });
+}
 

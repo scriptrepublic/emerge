@@ -85,4 +85,38 @@ class Report extends CI_Controller {
 		}
 	}
 
+
+	public function view_ai($id)
+	{
+		$data['page_title'] = 'AI Assessment Report';
+
+		if ($this->session->userdata('ses_logged_in')==FALSE)
+		{
+			redirect('login');
+		}else{
+			
+			$data['result_country'] = $this-> database_model->selectall('r_countries');
+			$data['result_industry'] = $this-> database_model->selectall('r_industry');
+			$data['result_category'] = $this-> database_model->selectall('r_category');
+			
+			$id = decryptthis($id);
+
+			$user_id = $this->session->userdata('ses_user_id');
+			$data['user_id'] = $user_id;
+
+
+			$data_ass = array(
+	        	'user_id'=> $user_id,
+	        	'assessment_id'=> $id,
+	        );
+			$data['result_ass'] = $this-> database_model->select_one_query('v_assessment',$data_ass);
+
+			//echo count($data['result_docs']);
+
+			$this->load->view('includes/view_header', $data);
+			$this->load->view('view_report_ai', $data);
+			$this->load->view('includes/view_footer');
+		}
+	}
+
 }

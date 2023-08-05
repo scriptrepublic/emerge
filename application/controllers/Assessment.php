@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+use Orhanerday\OpenAi\OpenAi;
 class Assessment extends CI_Controller {
 	
 	public function __construct()
@@ -71,6 +71,63 @@ class Assessment extends CI_Controller {
 	{
 		$value = $this-> database_model->save_assess();
 		echo $value;
+	}
+
+	public function ai($id)
+	{
+
+		$id = decryptthis($id);
+		$user_id = $this->session->userdata('ses_user_id');
+		
+		$data_ass = array(
+			'user_id'=> $user_id,
+			'assessment_id'=> $id,
+		);
+		$result_ass = $this-> database_model->select_one_query('v_assessment',$data_ass);
+		
+		$open_ai = new OpenAi(OPEN_AI_API);
+
+        $message = 'A business called '.$result_ass['b_name'].', '.$result_ass['industry_name'].' MSME based in the '.$result_ass['orig_country_name'].' is planning to export to '.$result_ass['target_country_name'].'. Generate 3 exporting business ideas, and real world recommendations (html break and bold tag for title) for each exporting readiness of in terms of product/service readiness, market readiness, financial readiness, operational readiness, legal and regulatory readiness, and organizational readiness. each separated by "<br><br>"';
+        
+		$complete = $open_ai->complete([
+			'engine' => 'text-davinci-003',
+			'prompt' => $message,
+			'temperature' => 0.9,
+			'max_tokens' => 800,
+			'frequency_penalty' => 0,
+			'presence_penalty' => 0.6,
+			]);
+
+			//var_dump($complete);
+			
+			
+			$data = json_decode($complete);
+			if (isset($data->error)){
+
+				$data = array(
+				'ai_recommendations'=>'AI Recommendations are currently disabled. Please click the "AI Recommendations" button above to try again, or contact the system administrator for assistance.',
+				);
+		
+				$this->db->where('assessment_id', $id);
+				$this->db->update('t_assessments', $data);
+
+				return true;
+
+
+			}else{
+				
+				$answer = $data->choices[0]->text;
+
+				$data = array(
+				'ai_recommendations'=>$answer,
+				);
+		
+				$this->db->where('assessment_id', $id);
+				$this->db->update('t_assessments', $data);
+
+				return true;
+			}
+		
 	}
 
 }

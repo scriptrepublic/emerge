@@ -7,7 +7,6 @@ class Database_model extends CI_Model {
 
    }
 
-
    function save_assess(){
 		$user_id = $this->session->userdata('ses_user_id');
 		$b_country = $this->input->post('b_country');

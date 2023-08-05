@@ -85,6 +85,9 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 define('SYSTEM_NAME','EMERGE');
+
+define('OPEN_AI_API','');
+
 define('SYSTEM_TAGLINE','Your Path to Export Success');
 define('SYSTEM_DESCRIPTION','EMERGE is a powerful app designed to empower Micro, Small, and Medium-sized Enterprises (MSMEs) in their journey towards export success. Built on the foundation of striving for excellence, EMERGE is your comprehensive online export readiness assessment tool, guiding you every step of the way.');
 define('SYSTEM_DESCRIPTION2','With <strong class="apptext">EMERGE</strong>, MSMEs can evaluate their readiness for entering the global market with ease. The app serves as a virtual mentor, providing a dynamic checklist and assessment tool that simplifies the complex process of exporting. Whether you are a budding entrepreneur or an established business, <strong class="apptext">EMERGE</strong> ensures you have a solid foundation before taking the leap.');

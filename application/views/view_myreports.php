@@ -59,7 +59,10 @@
                                         <td><?php echo $row_ass['orig_country_name'];?></td>
                                         <td><?php echo $row_ass['target_country_name'];?></td>
                                         <td><?php echo $row_ass['date_completed'];?></td>
-                                        <td><a href="<?php echo base_url();?>report/view/<?php echo encryptthis($row_ass['origin_country']);?>/<?php echo encryptthis($row_ass['target_country']);?>"><i class="fa fa-external-link"></i> View</a></td>
+                                        <td>
+                                            <a href="<?php echo base_url();?>report/view/<?php echo encryptthis($row_ass['origin_country']);?>/<?php echo encryptthis($row_ass['target_country']);?>"><i class="fa fa-external-link"></i> View</a><br>
+                                            <a href="<?php echo base_url();?>report/view_ai/<?php echo encryptthis($row_ass['assessment_id']);?>"><i class="fa fa-magic"></i> <?php echo SYSTEM_NAME; ?> AI Report</a>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                                   </tbody>

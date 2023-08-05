@@ -7,6 +7,8 @@
                     <br>
                     <div class="col-sm-10 col-sm-offset-1 profiel-container" style="text-align: justify;">
                             <div class="col-sm-10 col-sm-offset-1">
+                                <button class="navbar-btn nav-button login pull-left" id="ai_recommend" onclick="ai_recommend('<?php echo encryptthis($result_ass['assessment_id']); ?>')"><i class="fa fa-magic"></i> <?php echo SYSTEM_NAME; ?> AI Recommendations</button>
+                            
                                 <a href="javascript:window.print()"><button class="navbar-btn nav-button login pull-right" ><i class="fa fa-print"></i> Print</button></a>
                             </div>
                             <div class="clear">
