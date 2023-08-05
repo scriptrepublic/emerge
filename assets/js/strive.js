@@ -167,6 +167,7 @@ function saveprofile(){
                     b_contact: $('input[name="b_contact"]').val(),
                     b_info: $('textarea[name="b_info"]').val(),
                     b_photo: $('#wizardPicturePreview').attr('src'),
+                    b_url: $('input[name="b_url"]').val(),
                 },
             dataType: "text",  
             cache:false,

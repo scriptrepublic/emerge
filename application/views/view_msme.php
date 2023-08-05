@@ -128,6 +128,9 @@
                                                 <li><i class="pe-7s-map-marker strong"> </i> <?php echo $result_msme['orig_country'];?></li>
                                                 <li><i class="pe-7s-mail strong"> </i> <?php echo $result_msme['user_email'];?></li>
                                                 <li><i class="pe-7s-call strong"> </i> <?php echo $result_msme['b_contact'];?></li>
+                                                <?php if($result_msme['b_url'] != '') { ?>
+                                                <li><i class="pe-7s-global strong"> </i> <a href="<?php echo $result_msme['b_url'];?>" target="_blank"><?php echo $result_msme['b_url'];?></a></li>
+                                                <?php } ?>
                                             </ul>
                                         </div>
 

@@ -78,7 +78,7 @@ a {
 } 
 a:hover {
     text-decoration: none;
-    color: #1f2222;
+    color: #ffa6a5;
     -webkit-transition: all .8s ease;
     transition: all .8s ease;
 }

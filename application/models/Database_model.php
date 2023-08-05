@@ -113,6 +113,7 @@ class Database_model extends CI_Model {
         'b_country'=>$this->input->post('b_country'),
         'b_target'=>$this->input->post('b_target'),
         'b_photo'=>$this->input->post('b_photo'),
+        'b_url'=>$this->input->post('b_url'),
         );
 
 		$this->db->where('user_id', $user_id);

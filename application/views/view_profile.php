@@ -86,6 +86,10 @@
 
 
                                 <div class="form-group">
+                                    <label>Business Website <small>(optional)</small></label>
+                                    <input name="b_url" type="text" class="form-control" placeholder="Business Website" value="<?php echo $result['b_url']; ?>" >
+                                </div>
+                                <div class="form-group">
                                     <label>Target Country for Export <small>(required)</small></label>
                                     <select name="b_target" class="form-control required">
                                         <option value="">- Select Country -</option>
